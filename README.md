@@ -1,8 +1,6 @@
-[![build status](https://secure.travis-ci.org/rstuven/node-amqp-mock.png)](http://travis-ci.org/rstuven/node-amqp-mock)
 # node-amqp-mock
 
-This is a mocking and expectations library
-for [node-amqp](https://github.com/postwait/node-amqp),
+This is a mocking and expectations library for node-amqp
 inspired by [nock](https://github.com/flatiron/nock).
 
 ## Usage
