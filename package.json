@@ -5,7 +5,7 @@
     "email": "rstuven@gmail.com"
   },
   "description": "AMQP mocking and expectations library",
-  "version": "0.1.7-2",
+  "version": "0.1.7-3",
   "repository": {
     "type": "git",
     "url": "git://github.com/crashlytics/node-amqp-mock.git"
