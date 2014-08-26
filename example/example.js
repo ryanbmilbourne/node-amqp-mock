@@ -1,10 +1,7 @@
-/**
- * Created by jvecchioli on 8/25/2014.
- */
 var amqp = require('amqp');
 var amqpmock = require('..');
 
-var scope = amqpmock(amqp,{url: 'amqp://guest:guest@localhost:5672'})
+var scope = amqpmock(amqp, {url: 'amqp://guest:guest@localhost:5672'})
         .exchange('topic_animals', {type: 'topic'})
         .publish('quick.orange.rabbit', 'Hello')
         .publish('lazy.brown.fox', 'World')
@@ -12,6 +9,8 @@ var scope = amqpmock(amqp,{url: 'amqp://guest:guest@localhost:5672'})
         .publish('', 'approve', {ack: true}) // expect to be acknowledged
         .publish('', 'disapprove', {ack: false}) // expect to be not acknowledged
     ;
+
+console.log('amqp-mock scope correctly initialized.');
 
 var connection = amqp.createConnection({url: 'amqp://guest:guest@localhost:5672'});
 
@@ -23,7 +22,7 @@ connection.on('ready', function(){
             queue.bind(exchange.name, 'lazy.#');
 
             queue.subscribe({ack: false}, function(message){
-                console.log(message.data);
+                console.log('> ' + message.data);
             });
         });
     });
@@ -33,7 +32,7 @@ connection.on('ready', function(){
             queue.bind(exchange.name, '');
 
             queue.subscribe({ack: true}, function(message){
-                console.log(message.data);
+                console.log('> ' + message.data);
                 if (message.data === 'approve')
                     queue.shift();
             });

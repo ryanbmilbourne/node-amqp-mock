@@ -11,7 +11,7 @@ On your test, you can setup your mocking object like this:
     var amqp = require('amqp');
     var amqpmock = require('amqp-mock');
 
-    var scope = amqpmock({url: 'amqp://guest:guest@localhost:5672'})
+    var scope = amqpmock(amqp, {url: 'amqp://guest:guest@localhost:5672'})
         .exchange('topic_animals', {type: 'topic'})
             .publish('quick.orange.rabbit', 'Hello')
             .publish('lazy.brown.fox', 'World')
