@@ -1,14 +1,14 @@
 {
     "name": "amqp-mock",
     "author": {
-        "name": "Ricardo Stuven",
-        "email": "rstuven@gmail.com"
+        "name": "Julien Vecchioli",
+        "email": "jvecchioli@gmail.com"
     },
     "description": "AMQP mocking and expectations library",
     "version": "0.2.0",
     "repository": {
         "type": "git",
-        "url": "git://github.com/jvecchioli/node-amqp-mock.git"
+        "url": "https://github.com/jvecchioli/node-amqp-mock.git"
     },
     "main": "lib/intercept",
     "scripts": {
