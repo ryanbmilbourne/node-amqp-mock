@@ -1,8 +1,14 @@
-var mockamqp = require('..'),
-    amqp = require('amqp'),
-    sinon = require('sinon'),
-    chai = require('chai'),
-    should = chai.should();
+"use strict";
+
+var amqp = require('amqp');
+var sinon = require('sinon');
+var chai = require('chai');
+var should = chai.should();
+
+var mockamqp = require('..')(amqp ,{url: 'amqp://guest:guest@localhost:5672'});
+
+
+
 chai.use(require('sinon-chai'));
 
 describe('amqp-mock', function(){

@@ -1,18 +1,26 @@
 {
-  "name": "amqp-mock",
-  "author": {
-    "name": "Ricardo Stuven",
-    "email": "rstuven@gmail.com"
-  },
-  "description": "AMQP mocking and expectations library",
-  "version": "0.2.0",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/crashlytics/node-amqp-mock.git"
-  },
-  "main": "lib/intercept",
-  "scripts": {
-    "test": "mocha -R spec"
-    "amqp": "=0.2.0"
-  }
+    "name": "amqp-mock",
+    "author": {
+        "name": "Ricardo Stuven",
+        "email": "rstuven@gmail.com"
+    },
+    "description": "AMQP mocking and expectations library",
+    "version": "0.2.0",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/jvecchioli/node-amqp-mock.git"
+    },
+    "main": "lib/intercept",
+    "scripts": {
+        "test": "mocha -R spec"
+    },
+    "dependencies": {
+        "amqp": "=0.2.0"
+    },
+    "devDependencies": {
+        "mocha":"*",
+        "sinon":"*",
+        "chai":"*",
+        "sinon-chai":"*"
+    }
 }
