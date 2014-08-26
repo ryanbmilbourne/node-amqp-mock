@@ -5,9 +5,7 @@ var sinon = require('sinon');
 var chai = require('chai');
 var should = chai.should();
 
-var mockamqp = require('..')(amqp ,{url: 'amqp://guest:guest@localhost:5672'});
-
-
+var mockamqp = require('..');
 
 chai.use(require('sinon-chai'));
 
@@ -32,7 +30,7 @@ describe('amqp-mock', function(){
 
         it('should publish messages with different exchanges', function(done){
 
-            var scope = mockamqp(),
+            var scope = mockamqp(amqp ,{url: 'amqp://guest:guest@localhost:5672'}),
                 spy = sinon.spy(),
                 connection = amqp.createConnection();
 
@@ -73,7 +71,7 @@ describe('amqp-mock', function(){
 
         it('should publish messages with different routing keys through fanout exchange', function(done){
 
-            var scope = mockamqp(),
+            var scope = mockamqp(amqp ,{url: 'amqp://guest:guest@localhost:5672'}),
                 spy = sinon.spy(),
                 connection = amqp.createConnection();
 
@@ -117,7 +115,7 @@ describe('amqp-mock', function(){
 
         it('should publish messages with different routing keys through direct exchange', function(done){
 
-            var scope = mockamqp(),
+            var scope = mockamqp(amqp ,{url: 'amqp://guest:guest@localhost:5672'}),
                 spy = sinon.spy(),
                 connection = amqp.createConnection();
 
@@ -160,7 +158,7 @@ describe('amqp-mock', function(){
 
         it('should publish messages with different routing keys through topic exchange', function(done){
 
-            var scope = mockamqp(),
+            var scope = mockamqp(amqp ,{url: 'amqp://guest:guest@localhost:5672'}),
                 spy = sinon.spy(),
                 connection = amqp.createConnection();
 
