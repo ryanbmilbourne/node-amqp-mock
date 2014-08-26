@@ -3,7 +3,7 @@ var sinon = require('sinon');
 var chai = require('chai');
 var should = chai.should();
 
-var describe = require('mocha').describe;
+var mockamqp = require('..');
 
 var mockamqp = require('..');
 chai.use(require('sinon-chai'));
